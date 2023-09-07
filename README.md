@@ -11,8 +11,8 @@ curl -XPUT -H "Content-Type: application/json" http://localhost:9200/_all/_setti
 ## Run the service
 Assuming you have installed python3 locally, if not, please follow [this link](https://realpython.com/installing-python/).
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
+pipenv install --python 3.11
+pipenv shell
 pip install -r requirements.txt
 flask run
 ```
@@ -26,7 +26,8 @@ curl --location --request POST 'http://127.0.0.1:5000/load'
 
 If you don't have open api key set in your environment, stop flask, add the following to [.venv/bin/activate](.venv/bin/activate)
 ```
-export OPENAI_API_KEY=YOUR_CHATGPT4_KEY
+cp .env.example .env
+# Update the .env with your API Key and Azure API Base if you have
 ```
 
 run `source .venv/bin/activate` to set the environment variable, start flask, and hit the load endpoint again. 

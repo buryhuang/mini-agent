@@ -4,3 +4,4 @@ llama_index>=0.7.1
 httpx>=0.24.1
 opensearch-py
 nltk
+python-dotenv

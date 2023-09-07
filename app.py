@@ -1,6 +1,8 @@
 import json
 import os
 from os import getenv
+from dotenv import load_dotenv
+
 from llama_index import SimpleDirectoryReader, ServiceContext, LLMPredictor
 from llama_index import VectorStoreIndex, StorageContext
 from llama_index.vector_stores import OpensearchVectorStore, OpensearchVectorClient
@@ -11,6 +13,9 @@ from pathlib import Path
 
 from flask import Flask, request
 from flask_cors import CORS
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)  # This will enable CORS for all routes
