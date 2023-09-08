@@ -27,7 +27,7 @@ def load():
     idx = getenv("OPENSEARCH_INDEX", "buryhuang-gpt-index-demo")
     client = OpensearchVectorClient(endpoint, idx, 1536, embedding_field="embedding", text_field="content")
     vector_store = OpensearchVectorStore(client)
-    base_path = 'llmindex_docs/output'
+    base_path = 'llmindex_docs/input'
     for root, dirs, files in walk(base_path):
         for file in files:
             full_path = Path(root, file)
